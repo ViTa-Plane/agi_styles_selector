@@ -1,12 +1,28 @@
 [
-  {
-    "name": "Cyberpunk",
+	{
+	"name": "",
+	"comment": "none",
+	"category": "Other",
+	"prompt": "",
+	"negative_prompt": "",
+	"thumbnail": "none.png"
+	},
+	{
+	"name": "Noir",
+	"comment": "minimal",
+	"category": "Cinematic",
+	"prompt": "monochrome, dramatic shadows, 1940s style",
+	"negative_prompt": "vibrant, colorful",
+	"thumbnail": "noir_detective.jpg"
+	},
+	{
+	"name": "Cyberpunk",
 	"url": "",
 	"comment": "extended",
 	"category": "Cinematic",
-    "prompt": "cyberpunk style, neon lights, <lora:cyber_core:0.85>",
-    "negative_prompt": "blurry, embedding:bad_hand",
-    "thumbnail": "cyberpunk.png",
+	"prompt": "cyberpunk style, neon lights, <lora:cyber_core:0.85>",
+	"negative_prompt": "blurry, embedding:bad_hand",
+	"thumbnail": "cyberpunk.png",
 	"lora": "Cybercore Aesthetic",
 	"params": {
 		"model_name": "SDXL 1.0",
@@ -17,13 +33,62 @@
 		"size": "768 x 1344",
 		"clip_skip": 2
 	  }
-  },
-  {
-    "name": "Noir",
-	"comment": "minimal",
-	"category": "Cinematic",
-    "prompt": "monochrome, dramatic shadows, 1940s style",
-    "negative_prompt": "vibrant, colorful",
-    "thumbnail": "noir_detective.jpg"
-  }
+	},
+	{
+	"name": "Cyber Samurai",
+	"url": "https://civitai.red/images/2961506",
+	"category": "civitai workflows",
+	"comment": "",
+	"prompt": "Luxury style, masterpiece, complex detailed, best quality, hdr, editorial fashion photo, biomechanical alien, sophisticated, high-end, luxurious, art by goro fujita, white and black colors, cyber, <lora:Cyber_relib_80st_64_128:0.6>, <lora:CyberWorld_v1.1:1>",
+	"negative_prompt": "human, (worst quality, low quality, normal quality:1.4), lowres, jpeg artifacts, [deformed | disfigured], poorly drawn, doll, illustration, graphic, cg. cgi, cartoon, anime, glitch, 3d, 2d, octane, sketch, acrylic, painting, drawing, vignette, bnw, sepia, dof, (contortion, malformation, irregular shape, tension, compression), headphones, cheap, noisy, blurry, unattractive, amateurish,",
+	"lora": "Cyber World",
+	"thumbnail": "civitai/tn_2961506.jpg",
+	"params": {
+		"model_name": "epicphotogasm_xPlusPlus",
+		"seed": 2156033112,
+		"steps": 34,
+		"cfg_scale": 6,
+		"sampler": "DPM++ 2M Karras",
+		"size": "0 x 0",
+		"clip_skip": "N/A"
+		}
+	},
+	{
+	  "name": "Neon Alley",
+	  "url": "https://civitai.red/images/130313518",
+	  "category": "civitai workflows",
+	  "comment": "",
+	  "prompt": "absurdres, masterpiece, score_7, score_8, @g0thic, neon, glowing, neon lights, gothic, 1girl, city, neon lights, cyberpunk, cyber wings, glitch, distortion, horns, halo, goth, twintails, from below, safe, \"GOTHIC NEON\", neon sign, <lora:GothicNeonAnima:0.8>",
+	  "negative_prompt": "worst quality, low quality, score_1, score_2, score_3, blurry, jpeg artifacts, sepia, watermark, signature,",
+	  "lora": "Vixon's Anima/Pony Styles - Gothic Neon",
+	  "thumbnail": "civitai/tn_130313518.jpg",
+	  "params": {
+		"model_name": "animaOfficial_preview3Base",
+		"seed": 273659989280261,
+		"steps": 30,
+		"cfg_scale": 4,
+		"sampler": "er_sde simple",
+		"size": "896 x 1152",
+		"clip_skip": "N/A"
+	  }
+	},
+	{
+	  "name": "Dramatic Lighting",
+	  "url": "https://civitai.red/images/100008629",
+	  "category": "civitai workflows",
+	  "comment": "",
+	  "prompt": "s1_dram, masterpiece, best quality, absurdres, high detail, traditional media, depth of field, blurry background, light particles, 1 girl, portrait, freckles, blue eyes, blonde hair, hair between eyes, sidelocks, frills, blue and white polkadot top, glance at viewer, smirk <lora:S1 Dramatic Lighting Illustrious_V2:1>",
+	  "negative_prompt": "worst quality, low quality, displeasing, text, , watermark, bad anatomy, text, artist name, signature, hearts, deformed hands, missing finger, shiny skin,child,children",
+	  "lora": "S1 Dramatic Lighting",
+	  "thumbnail": "civitai/tn_100008629.jpg",
+	  "params": {
+		"model_name": "hassakuXLIllustrious_v13StyleA",
+		"seed": 1050035162428119,
+		"steps": 30,
+		"cfg_scale": 4,
+		"sampler": "DPM++ 2M Karras",
+		"size": "832 x 1216",
+		"clip_skip": "N/A"
+	  }
+	}
 ]
