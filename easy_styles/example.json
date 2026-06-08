@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Cyberpunk",
+	"url": "",
+	"comment": "extended",
+	"category": "Cinematic",
+    "prompt": "cyberpunk style, neon lights, <lora:cyber_core:0.85>",
+    "negative_prompt": "blurry, embedding:bad_hand",
+    "thumbnail": "cyberpunk.png",
+	"lora": "Cybercore Aesthetic",
+	"params": {
+		"model_name": "SDXL 1.0",
+		"seed": 3282307999,
+		"steps": 20,
+		"cfg_scale": 4.5,
+		"sampler": "Euler a",
+		"size": "768 x 1344",
+		"clip_skip": 2
+	  }
+  },
+  {
+    "name": "Noir",
+	"comment": "minimal",
+	"category": "Cinematic",
+    "prompt": "monochrome, dramatic shadows, 1940s style",
+    "negative_prompt": "vibrant, colorful",
+    "thumbnail": "noir_detective.jpg"
+  }
+]
