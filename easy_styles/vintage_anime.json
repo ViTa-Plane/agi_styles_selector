@@ -1,0 +1,16 @@
+{
+  "name": "Vintage Anime 1990s",
+  "category": "Anime",
+  "prompt": "vintage 1990s anime style, cel-shaded, hand-drawn aesthetic, high quality, {prompt}, <lora:vintage_anime_v2:0.8>",
+  "negative_prompt": "3d render, photo, realistic, modern digital art, blurry, embedding:bad-hands-5",
+  "thumbnail": "vintage_anime_90s.jpg",
+  "comment": "Perfect for retro sci-fi and cyberpunk generations.",
+  "params": {
+    "model_name": "anime_core_v1.safetensors",
+    "seed": 147762867500961,
+    "steps": 20,
+    "cfg": 3.5,
+    "sampler": "euler_ancestral",
+    "scheduler": "ays+"
+  }
+}
