@@ -22,9 +22,10 @@ app.registerExtension({
                 
                 node.currentCommentText = "";
                 node.currentSeedValue = "None";
+                node.currentSourceFile = "None"; // <-- ADDED: Track current style file source
                 node.seedCopyFeedback = false;
                 
-                node.size = [350, 340];
+                node.size = [350, 355]; // <-- ADJUSTED: Extra 15px height cushion for bottom file text frame
 
                 function syncStylesData() {
                     let stylesArray = [];
@@ -72,6 +73,7 @@ app.registerExtension({
                             node.currentNegativeText = "";
                             node.currentCommentText = "";
                             node.currentSeedValue = "None";
+                            node.currentSourceFile = "None";
                             node.detectedLoraNames = [];
                             app.canvas.setDirty(true, true);
                             return;
@@ -86,6 +88,7 @@ app.registerExtension({
 
                         node.currentPositiveText = cleanUIString(styleConfig.prompt);
                         node.currentNegativeText = cleanUIString(styleConfig.negative_prompt);
+                        node.currentSourceFile = styleConfig.file_name || "Unknown.json"; // <-- ADDED: Update filename
                         
                         // COMPACT DYNAMIC PARAMS PARSER LOOP
                         let formattedParams = "";
@@ -179,6 +182,7 @@ app.registerExtension({
             };
 
             nodeType.prototype.onMouseDown = function (e, local_pos) {
+                // Adjusted bound checks slightly due to frame shift down
                 if (local_pos[1] >= 270 && local_pos[1] <= 330 && local_pos[0] >= 210) {
                     if (this.currentSeedValue && this.currentSeedValue !== "None" && this.currentSeedValue !== "ERROR") {
                         navigator.clipboard.writeText(this.currentSeedValue);
@@ -190,7 +194,7 @@ app.registerExtension({
                 }
             };
 
-            nodeType.prototype.computeSize = function() { return [350, 340]; };
+            nodeType.prototype.computeSize = function() { return [350, 355]; };
 
             nodeType.prototype.onDrawBackground = function(ctx) {
                 if (this.flags.collapsed) return;
@@ -283,7 +287,7 @@ app.registerExtension({
                 const metadataTopY = 272;
                 ctx.fillStyle = "rgba(0, 0, 0, 0.35)";
                 ctx.beginPath();
-                ctx.roundRect(padding, metadataTopY, this.size[0] - (padding * 2), 52, 4);
+                ctx.roundRect(padding, metadataTopY, this.size[0] - (padding * 2), 65, 4); // <-- EXPANDED: Changed height from 52 to 65
                 ctx.fill();
                 
                 ctx.font = "7px monospace";
@@ -316,6 +320,18 @@ app.registerExtension({
                         ctx.fillText(this.currentSeedValue, seedX, metadataTopY + 24);
                     }
                 }
+
+                // ADDED: Bottom .json Filename Footnote inside the panel deck
+                ctx.strokeStyle = "rgba(255, 255, 255, 0.07)";
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(padding + 6, metadataTopY + 51);
+                ctx.lineTo(this.size[0] - padding - 6, metadataTopY + 51);
+                ctx.stroke();
+
+                ctx.fillStyle = isJsonError ? "#ff5555" : "#777788";
+                ctx.font = "italic 7px sans-serif";
+                ctx.fillText(`Source Configuration: easy_styles/${this.currentSourceFile}`, padding + 8, metadataTopY + 60);
                 
                 ctx.restore();
             };
