@@ -58,7 +58,8 @@ def load_flat_container_styles():
                             "thumbnail": item.get("thumbnail"),
                             "comment": item.get("comment", ""),
                             "seed": item.get("seed", ""),
-                            "params": nested_params
+                            "params": nested_params,
+                            "file_name": file  # <-- ADDED: Track the source filename
                         })
                 except Exception as e:
                     error_msg = str(e)
@@ -72,7 +73,8 @@ def load_flat_container_styles():
                         "thumbnail": None,
                         "comment": f"PARSER REJECTION: {error_msg}",
                         "seed": "ERROR",
-                        "params": {}
+                        "params": {},
+                        "file_name": file  # <-- ADDED: Also for errors
                     })
     except Exception as e:
         print(f"[Styles Selector] Directory access error: {e}")
