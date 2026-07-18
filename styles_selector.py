@@ -183,8 +183,15 @@ class CustomStylesSelector:
             style_positive = style_data.get("prompt", "{prompt}")
             style_negative = style_data.get("negative_prompt", "")
 
+            # 1. First process the scaling factor on the JSON's internal LoRAs
             style_positive = self.process_lora_weights(style_positive, lora_strength)
 
+            # 2. CHANGED: Strip dependencies ONLY from the JSON string segments if enabled
+            if remove_dependencies:
+                style_positive = self.clean_all_dependencies(style_positive)
+                style_negative = self.clean_all_dependencies(style_negative)
+
+            # 3. Safely splice the pristine or stripped JSON string into user inputs
             if "{prompt}" in style_positive:
                 final_positive = style_positive.replace("{prompt}", positive)
             else:
@@ -193,12 +200,9 @@ class CustomStylesSelector:
             final_negative = f"{negative}, {style_negative}" if negative and style_negative else (style_negative if style_negative else negative)
             res_p, res_n = final_positive, final_negative
 
+        # 4. Final sanitization (only cleans commas/formatting tags, leaves user embeddings intact)
         res_p = self.clean_output_string(res_p)
         res_n = self.clean_output_string(res_n)
-
-        if remove_dependencies:
-            res_p = self.clean_all_dependencies(res_p)
-            res_n = self.clean_all_dependencies(res_n)
 
         return (res_p, res_n)
 
