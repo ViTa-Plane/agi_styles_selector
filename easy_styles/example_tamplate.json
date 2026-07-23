@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Cyberpunk Hero",
+    "category": "Sci-Fi",
+    "character": "V",
+    "prompt": "neon lit cityscape, futuristic armor, {prompt}",
+    "negative_prompt": "blurry, low quality",
+    "thumbnail": "cyberpunk.png",
+    "comment": "Best with SDXL base model",
+    "seed": 42109841
+  },
+  {
+    "name": "Generic Landscape",
+    "category": "Nature",
+    "character": null,
+    "prompt": "lush green valley, dramatic cloud sky",
+    "thumbnail": "valley.png"
+  }
+]
