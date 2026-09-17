@@ -1,0 +1,62 @@
+[
+	{
+	"name": "Noir",
+	"comment": "minimal",
+	"category": "cinematic",
+	"prompt": "monochrome, dramatic shadows, 1940s style",
+	"negative_prompt": "vibrant, colorful",
+	"thumbnail": "example/noir_detective.jpg"
+	},
+	{
+	"name": "Cyberpunk",
+	"url": "",
+	"comment": "extended",
+	"category": "cinematic",
+	"prompt": "cyberpunk style, neon lights, <lora:cyber_core:0.85>",
+	"negative_prompt": "blurry, embedding:bad_hand",
+	"thumbnail": "example/cyberpunk.png",
+	"lora": "Cybercore Aesthetic",
+	"params": {
+		"model_name": "SDXL 1.0",
+		"seed": 3282307999,
+		"steps": 20,
+		"cfg_scale": 4.5,
+		"sampler": "Euler a",
+		"size": "768 x 1344",
+		"clip_skip": 2
+		}
+	},
+	{
+	"name": "Cyber Samurai",
+	"url": "https://civitai.red/images/2961506",
+	"category": "civitai",
+	"comment": "",
+	"prompt": "Luxury style, masterpiece, complex detailed, best quality, hdr, editorial fashion photo, biomechanical alien, sophisticated, high-end, luxurious, art by goro fujita, white and black colors, cyber, <lora:Cyber_relib_80st_64_128:0.6>, <lora:CyberWorld_v1.1:1>",
+	"negative_prompt": "human, (worst quality, low quality, normal quality:1.4), lowres, jpeg artifacts, [deformed | disfigured], poorly drawn, doll, illustration, graphic, cg. cgi, cartoon, anime, glitch, 3d, 2d, octane, sketch, acrylic, painting, drawing, vignette, bnw, sepia, dof, (contortion, malformation, irregular shape, tension, compression), headphones, cheap, noisy, blurry, unattractive, amateurish,",
+	"lora": "Cyber World",
+	"thumbnail": "example/tn_2961506.jpg",
+	"params": {
+	"model_name": "epicphotogasm_xPlusPlus",
+	"seed": 2156033112,
+	"steps": 34,
+	"cfg_scale": 6,
+	"sampler": "DPM++ 2M Karras",
+	"size": "0 x 0",
+	"clip_skip": "N/A"
+	}
+	},
+	{
+	"name": "Neon Alley",
+	"category": "scene",
+	"prompt": "empty futuristic street alleyway, rainy asphalt reflections, towering neon signs",
+	"negative_prompt": "people, human, character",
+	"thumbnail": "example/tn_130313518.jpg"
+	},
+	{
+	"name": "Legacy Unassigned Art Style",
+	"category": "Art Style",
+	"prompt": "highly detailed oil painting, expressionism paint strokes",
+	"negative_prompt": "photorealistic",
+	"thumbnail": "example/oil_painting.jpg"
+	}
+]
